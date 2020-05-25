@@ -4,7 +4,7 @@ ARG artifactory_url
 ARG artifactory_user
 ARG artifactory_password
 ARG tech_user
-ARG fmw_version=12.2.1.3.0
+ARG fmw_version
 
 USER root
 
@@ -17,6 +17,6 @@ RUN sudo apt-get update \
 
 RUN mkdir -p /tmp/fmw/ \
 	&& cd /tmp/fmw/ \
-	&& wget --user=${artifactory_user} --password=${artifactory_password} ${artifactory_url}/docker-installer/weblogic/${fmw_version}/fmw_${fmw_version}_wls_quick.jar \
+	&& wget --user=${artifactory_user} --password=${artifactory_password} ${artifactory_url}/docker-installer/weblogic/${fmw_version}/fmw_${fmw_version}_wls_quick.jar
 	
 USER "${tech_user}"
