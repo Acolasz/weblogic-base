@@ -1,4 +1,5 @@
-FROM acolasz/java-base:1.8.172
+ARG jdk_u_version
+FROM acolasz/java-base:1.8.${jdk_u_version}
 
 ARG artifactory_url
 ARG artifactory_user
